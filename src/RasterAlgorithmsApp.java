@@ -24,9 +24,14 @@ public class RasterAlgorithmsApp extends JFrame {
         stepByStepButton = new JButton("Step-by-Step Algorithm");
         bresenhamButton = new JButton("Bresenham Algorithm");
 
+
         drawingPanel = new DrawingPanel();
         resultTextArea = new JTextArea(10, 20);
         resultTextArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane( resultTextArea,
+                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
 
         JPanel inputPanel = new JPanel();
         inputPanel.add(new JLabel("Point 1:"));
@@ -49,7 +54,8 @@ public class RasterAlgorithmsApp extends JFrame {
         contentPanel.add(inputPanel, BorderLayout.NORTH);
         contentPanel.add(buttonPanel, BorderLayout.SOUTH);
         contentPanel.add(drawingPanel, BorderLayout.CENTER);
-        contentPanel.add(resultTextArea, BorderLayout.EAST);
+        //contentPanel.add(resultTextArea, BorderLayout.EAST);
+        contentPanel.add(scrollPane, BorderLayout.EAST);
 
         add(contentPanel);
 
